@@ -5,38 +5,38 @@ dotenv.config();
 const env = process.env;
 
 const config = () => {
-    // App
-    const environment = env.ENVIRONMENT;
-    const port = env.PORT;
+  // App
+  const environment = env.ENVIRONMENT;
+  const port = env.PORT;
 
-    // Pub/Sub
-    const commandTopic = env.COMMAND_TOPIC;
-    const eventTopic = env.EVENT_TOPIC;
+  // Pub/Sub
+  const commandTopic = env.COMMAND_TOPIC;
+  const eventTopic = env.EVENT_TOPIC;
 
-    // Redis
-    const redisURL = env.REDIS_URL;
-    const keyTTL = env.KEY_TTL;
+  // Redis
+  const redisURL = env.REDIS_URL;
+  const keyTTL = env.KEY_TTL;
 
-    // Flow
-    const accessAPI = env.FLOW_ACCESS_API_URL;
+  // Flow
+  const accessAPI = env.FLOW_ACCESS_API_URL;
 
-    // Auth
-    const availableKeys = env.PROPOSER_KEY_COUNT;
-    const adminAuthorizerResourceId = env.GCP_KMS_RESOURCE_NAME;
-    const adminAuthorizerAddress = env.ADMIN_AUTHORIZER_ADDR;
+  // Auth
+  const availableKeys = env.PROPOSER_KEY_COUNT;
+  const adminAuthorizerResourceId = env.GCP_KMS_RESOURCE_NAME;
+  const adminAuthorizerAddress = env.ADMIN_AUTHORIZER_ADDR;
 
-    return {
-        environment,
-        port,
-        commandTopic,
-        eventTopic,
-        redisURL,
-        keyTTL,
-        accessAPI,
-        availableKeys,
-        adminAuthorizerResourceId,
-        adminAuthorizerAddress
-    };
+  return {
+    environment,
+    port,
+    commandTopic,
+    eventTopic,
+    redisURL,
+    keyTTL,
+    accessAPI,
+    availableKeys,
+    adminAuthorizerResourceId,
+    adminAuthorizerAddress,
+  };
 };
 
 export default config;

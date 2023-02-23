@@ -1,7 +1,7 @@
 import process from "./process";
 
 interface IEvent {
-    transactionId: string;
+  transactionId: string;
 }
 
 export { process, IEvent };
