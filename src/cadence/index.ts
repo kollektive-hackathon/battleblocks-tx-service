@@ -1,3 +1,5 @@
+import * as txcodes from "./txcodes";
+
 export enum TransactionName {
     NFT_MINT = "NFT_MINT",
     NFT_TRANSFER_ADMIN = "NFT_TRANSFER_ADMIN",
@@ -6,13 +8,14 @@ export enum TransactionName {
 }
 
 export const getTransaction = (name: TransactionName): string | ((path: string) => string) => {
-    const code = Object.values(codes).find((value) => Object.keys(codes)[Object.values(codes).indexOf(value)] === name);
+    const code = Object.values(txcodes).find((value) => Object.keys(txcodes)[Object.values(txcodes).indexOf(value)] === name);
     if (!code) {
         throw new Error(`Transaction code not found for ${name}`);
     }
     return code;
 };
 
+// TODO load thru env
 export const getContractAddresses = () => {
     return {
         battleBlocksNFT: ''

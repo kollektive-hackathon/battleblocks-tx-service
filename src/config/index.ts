@@ -22,6 +22,8 @@ const config = () => {
 
     // Auth
     const availableKeys = env.PROPOSER_KEY_COUNT;
+    const adminAuthorizerResourceId = env.GCP_KMS_RESOURCE_NAME;
+    const adminAuthorizerAddress = env.ADMIN_AUTHORIZER_ADDR;
 
     return {
         environment,
@@ -31,7 +33,9 @@ const config = () => {
         redisURL,
         keyTTL,
         accessAPI,
-        availableKeys
+        availableKeys,
+        adminAuthorizerResourceId,
+        adminAuthorizerAddress
     };
 };
 

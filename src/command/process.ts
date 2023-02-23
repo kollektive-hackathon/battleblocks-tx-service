@@ -3,6 +3,12 @@ import {sendTransaction} from "flow-cadut";
 import logger from "../logger";
 import { getContractAddresses, getTransaction } from "../cadence";
 import {getFreeKey, lockKey, unlockKey} from "../keys";
+import {GcpKmsAuthorizer, IAuthorize} from "fcl-gcp-kms-authorizer";
+import config from "../config";
+
+const { adminAuthorizerResourceId, adminAuthorizerAddress } = config();
+
+const adminAuthorizer = new GcpKmsAuthorizer(adminAuthorizerResourceId);
 
 const process = async (message: ICommand): Promise<string | null> => {
     // Get the message's transaction code
@@ -17,17 +23,27 @@ const process = async (message: ICommand): Promise<string | null> => {
     // Get free proposer key index
     const freeProposerKeyIndex = await getFreeKey();
 
+    // Get resourceIds used for signing
+    const authorizers = message.authorizers;
+
     // If we get a key we can proceed otherwise we go to DLQ
     if (freeProposerKeyIndex) {
-        // TODO setup gcp authorizations
-        const admin = null;
-        const proposer = null;
+        const signers = authorizers.map(authorizer => {
+            const kmsAuthorizer = new GcpKmsAuthorizer(authorizer.kmsResourceId);
+            return kmsAuthorizer.authorize(authorizer.resourceOwnerAddress, 0)
+        });
+
+        // Admin authorizer is always passed last
+        const admin = signers[signers.length - 1];
+
+        // Authorize Proposer Key
+        const proposer = adminAuthorizer.authorize(adminAuthorizerAddress, freeProposerKeyIndex);
 
         // Send Transaction
         const [result, err] = await sendTransaction({
             code: code,
             payer: admin,
-            signers: [admin],
+            signers: signers,
             proposer: proposer,
             args: args,
             limit: 9999,
