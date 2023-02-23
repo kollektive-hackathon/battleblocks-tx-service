@@ -1,9 +1,10 @@
 import logger from "../logger";
 import {IEvent} from "./index";
+import {unlockKey} from "../keys";
 
 const process = async (message: IEvent) => {
   try {
-    // TODO unlock proposal key on redis
+    await unlockKey(message.transactionId);
   } catch (err) {
     logger.log({
       level: "error",
