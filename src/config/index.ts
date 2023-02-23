@@ -13,6 +13,10 @@ const config = () => {
     const commandTopic = env.COMMAND_TOPIC;
     const eventTopic = env.EVENT_TOPIC;
 
+    // Redis
+    const redisURL = env.REDIS_URL;
+    const keyTTL = env.KEY_TTL;
+
     // Flow
     const accessAPI = env.FLOW_ACCESS_API_URL;
 
@@ -24,6 +28,8 @@ const config = () => {
         port,
         commandTopic,
         eventTopic,
+        redisURL,
+        keyTTL,
         accessAPI,
         availableKeys
     };
