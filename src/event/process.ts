@@ -1,6 +1,6 @@
+import { unlockKey } from "../keys";
 import logger from "../logger";
-import {IEvent} from "./index";
-import {unlockKey} from "../keys";
+import { IEvent } from "./index";
 
 const process = async (message: IEvent) => {
   try {
