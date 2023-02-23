@@ -1,3 +1,6 @@
 export enum TransactionName {
-    SAMPLE_TX_NAME = "SAMPLE_TX_NAME"
+    NFT_MINT = "NFT_MINT",
+    NFT_TRANSFER_ADMIN = "NFT_TRANSFER_ADMIN",
+    NFT_BURN = "NFT_BURN",
+    NFT_TRANSFER = "NFT_TRANSFER"
 }
