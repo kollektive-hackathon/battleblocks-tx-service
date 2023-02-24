@@ -5,6 +5,8 @@ export enum TransactionName {
   NFT_TRANSFER_ADMIN = "NFT_TRANSFER_ADMIN",
   NFT_BURN = "NFT_BURN",
   NFT_TRANSFER = "NFT_TRANSFER",
+
+  CREATE_USER_ACCOUNT = "CREATE_USER_ACCOUNT"
 }
 
 export const getTransaction = (name: TransactionName): string | ((path: string) => string) => {
