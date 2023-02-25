@@ -1,5 +1,5 @@
 {
-  "name": "tfc-flow-transaction-service",
+  "name": "battleblocks-tx-service",
   "version": "1.0.0",
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
@@ -30,7 +30,7 @@
   ],
   "main": "./dist/index.js",
   "scripts": {
-    "build": "tsc --build \"tsconfig.prod.json\" && npm run copy-cadence",
+    "build": "tsc --build \"tsconfig.json\" && npm run copy-cadence",
     "clean": "shx rm -rf ./dist",
     "ts-node-server": "ts-node src/index.ts",
     "lint": "./node_modules/eslint/bin/eslint.js  src --ext .ts",
