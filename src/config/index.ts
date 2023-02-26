@@ -31,7 +31,7 @@ const config = () => {
   const flowTokenAddress = env.FLOW_TOKEN_ADDRESS;
   const metadataViewsAddress = env.METADATA_VIEWS_ADDRESS;
 
-  // Contracts - TFC
+  // Contracts - battleblocks
   const battleBlocksNftAddress = env.BATTLEBLOCKS_NFT_ADDRESS;
   const battleBlocksAccountAddress = env.BATTLEBLOCKS_ACCOUNT_ADDRESS;
 
