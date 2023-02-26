@@ -11,6 +11,8 @@ const NFT_TRANSFER_ADMIN = read("./transactions/nft/admin/transfer_admin.cdc");
 const NFT_BURN = read("./transactions/nft/burn.cdc");
 const NFT_TRANSFER = read("./transactions/nft/transfer.cdc");
 
-const CREATE_USER_ACCOUNT = read("./transactions/account/create_user_account.cdc")
+// Account transactions
+const CREATE_USER_ACCOUNT = read("./transactions/account/admin/create_user_account.cdc")
+const CONNECT_CHILD_ACCOUNT = read("./transactions/account/cosign/connect_child_account.cdc")
 
-export { NFT_MINT, NFT_TRANSFER_ADMIN, NFT_BURN, NFT_TRANSFER, CREATE_USER_ACCOUNT };
+export { NFT_MINT, NFT_TRANSFER_ADMIN, NFT_BURN, NFT_TRANSFER, CREATE_USER_ACCOUNT, CONNECT_CHILD_ACCOUNT };
