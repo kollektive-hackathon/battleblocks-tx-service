@@ -6,8 +6,8 @@ export const read = (path: string): string => {
 };
 
 // NFT
-const NFT_MINT = read("./transactions/nft/admin/mint.cdc");
-const NFT_TRANSFER_ADMIN = read("./transactions/nft/admin/transfer_admin.cdc");
+const NFT_MINT = read("./transactions/nft/mint.cdc");
+const NFT_TRANSFER_ADMIN = read("./transactions/nft/transfer_admin.cdc");
 
 // GAME
 const GAME_JOIN = read("./transactions/game/join_game.cdc");
