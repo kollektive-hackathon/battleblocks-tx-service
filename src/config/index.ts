@@ -34,7 +34,7 @@ const config = () => {
   // Contracts - BattleBlocks
   const battleBlocksNftAddress = env.BATTLEBLOCKS_NFT_ADDRESS;
   const battleBlocksAccountAddress = env.BATTLEBLOCKS_ACCOUNT_ADDRESS;
-  const battleBlocksGameAddress = env.BATTLEBLOCKS_NFTP_ADDRESS;
+  const battleBlocksGameAddress = env.BATTLEBLOCKS_NFT_ADDRESS;
 
   return {
     environment,
