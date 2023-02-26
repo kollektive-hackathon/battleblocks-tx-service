@@ -25,6 +25,16 @@ const config = () => {
   const adminAuthorizerResourceId = env.GCP_KMS_RESOURCE_NAME;
   const adminAuthorizerAddress = env.ADMIN_AUTHORIZER_ADDR;
 
+  // Contracts - Standard
+  const fungibleTokenAddress = env.FUNGIBLE_TOKEN_ADDRESS;
+  const nonFungibleTokenAddress = env.NON_FUNGIBLE_TOKEN_ADDRESS;
+  const flowTokenAddress = env.FLOW_TOKEN_ADDRESS;
+  const metadataViewsAddress = env.METADATA_VIEWS_ADDRESS;
+
+  // Contracts - TFC
+  const battleBlocksNftAddress = env.BATTLEBLOCKS_NFT_ADDRESS;
+  const battleBlocksAccountAddress = env.BATTLEBLOCKS_ACCOUNT_ADDRESS;
+
   return {
     environment,
     port,
@@ -36,6 +46,12 @@ const config = () => {
     availableKeys,
     adminAuthorizerResourceId,
     adminAuthorizerAddress,
+    fungibleTokenAddress,
+    nonFungibleTokenAddress,
+    flowTokenAddress,
+    metadataViewsAddress,
+    battleBlocksNftAddress,
+    battleBlocksAccountAddress,
   };
 };
 

@@ -1,4 +1,5 @@
 import * as txcodes from "./txcodes";
+import config from "../config";
 
 export enum TransactionName {
   NFT_MINT = "NFT_MINT",
@@ -19,9 +20,9 @@ export const getTransaction = (name: TransactionName): string | ((path: string) 
   return code;
 };
 
-// TODO load thru env
 export const getContractAddresses = () => {
   return {
-    battleBlocksNFT: "",
+    BattleBlocksAccounts:config().battleBlocksAccountAddress,
+    BattleBlocksNFT: config().battleBlocksNftAddress,
   };
 };
