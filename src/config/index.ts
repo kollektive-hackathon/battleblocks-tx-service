@@ -31,9 +31,10 @@ const config = () => {
   const flowTokenAddress = env.FLOW_TOKEN_ADDRESS;
   const metadataViewsAddress = env.METADATA_VIEWS_ADDRESS;
 
-  // Contracts - battleblocks
+  // Contracts - BattleBlocks
   const battleBlocksNftAddress = env.BATTLEBLOCKS_NFT_ADDRESS;
   const battleBlocksAccountAddress = env.BATTLEBLOCKS_ACCOUNT_ADDRESS;
+  const battleBlocksGameAddress = env.BATTLEBLOCKS_NFTP_ADDRESS;
 
   return {
     environment,
@@ -52,6 +53,7 @@ const config = () => {
     metadataViewsAddress,
     battleBlocksNftAddress,
     battleBlocksAccountAddress,
+    battleBlocksGameAddress,
   };
 };
 

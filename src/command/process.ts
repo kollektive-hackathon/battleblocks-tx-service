@@ -1,4 +1,5 @@
-import { GcpKmsAuthorizer, IAuthorize } from "fcl-gcp-kms-authorizer";
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { GcpKmsAuthorizer } from "fcl-gcp-kms-authorizer";
 import { sendTransaction } from "flow-cadut";
 
 import { getContractAddresses, getTransaction } from "../cadence";

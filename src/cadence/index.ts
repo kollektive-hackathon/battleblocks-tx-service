@@ -1,13 +1,16 @@
-import * as txcodes from "./txcodes";
 import config from "../config";
+import * as txcodes from "./txcodes";
 
 export enum TransactionName {
+  // NFT
   NFT_MINT = "NFT_MINT",
   NFT_TRANSFER_ADMIN = "NFT_TRANSFER_ADMIN",
-  NFT_BURN = "NFT_BURN",
-  NFT_TRANSFER = "NFT_TRANSFER",
-
-  CREATE_USER_ACCOUNT = "CREATE_USER_ACCOUNT"
+  // USER
+  CREATE_USER_ACCOUNT = "CREATE_USER_ACCOUNT",
+  // GAME
+  GAME_JOIN = "GAME_JOIN",
+  GAME_CREATE = "GAME_CREATE",
+  GAME_MOVE = "GAME_MOVE",
 }
 
 export const getTransaction = (name: TransactionName): string | ((path: string) => string) => {
@@ -22,7 +25,11 @@ export const getTransaction = (name: TransactionName): string | ((path: string) 
 
 export const getContractAddresses = () => {
   return {
-    BattleBlocksAccounts:config().battleBlocksAccountAddress,
+    BattleBlocksAccounts: config().battleBlocksAccountAddress,
     BattleBlocksNFT: config().battleBlocksNftAddress,
+    BattleBlocksGame: config().battleBlocksGameAddress,
+    FlowToken: config().flowTokenAddress,
+    FungibleToken: config().fungibleTokenAddress,
+    NonFungibleToken: config().nonFungibleTokenAddress,
   };
 };
