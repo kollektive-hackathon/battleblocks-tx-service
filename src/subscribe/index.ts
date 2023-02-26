@@ -12,6 +12,7 @@ const pubsub = new PubSub();
 export function subscribeToPubSub() {
   const commands = pubsub.subscription(commandTopic);
 
+  // Process Commands
   commands.on("message", async (message) => {
     const data: ICommand = JSON.parse(message.data);
     try {
@@ -40,7 +41,8 @@ export function subscribeToPubSub() {
   });
 
   const events = pubsub.subscription(eventTopic);
-
+  
+  // Process Events
   events.on("message", async (message) => {
     const data: IEvent = JSON.parse(message.data);
     try {
