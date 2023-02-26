@@ -8,7 +8,7 @@ transaction(wagerAmount: UFix64, merkleRoot: [UInt8]) {
     let gamePlayerRef: &BattleBlocksGame.GamePlayer
     let wagerVault: @FlowToken.Vault
 
-    prepare(acct: AuthAccount) {
+    prepare(acct: AuthAccount, admin: AuthAccount) {
         // Get a reference to the GamePlayer resource in the signing account's storage
         self.gamePlayerRef = acct
             .borrow<&BattleBlocksGame.GamePlayer>(

@@ -4,7 +4,7 @@ transaction(gameID: UInt64, guessX: UInt64, guessY: UInt64, proof: [[UInt8]]?, i
 
     let gamePlayerRef: &BattleBlocksGame.GamePlayer
 
-    prepare(acct: AuthAccount) {
+    prepare(acct: AuthAccount, admin: AuthAccount) {
         // Get the GamePlayer reference from the signing account's storage
         self.gamePlayerRef = acct
             .borrow<&BattleBlocksGame.GamePlayer>(

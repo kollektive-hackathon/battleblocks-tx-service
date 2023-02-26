@@ -8,7 +8,7 @@ transaction(gameID: UInt64, wagerAmount: UFix64, merkleRoot: [UInt8]) {
     let gamePlayerRef: &BattleBlocksGame.GamePlayer
     let wagerVault: @FlowToken.Vault
 
-    prepare(signer: AuthAccount) {
+    prepare(signer: AuthAccount, admin: AuthAccount) {
         // Create GamePlayer resource if it doesn't already exist
         if signer.borrow<&BattleBlocksGame.GamePlayer>(from: BattleBlocksGame.GamePlayerStoragePath) == nil {
             let gamePlayer <- BattleBlocksGame.createGamePlayer()
