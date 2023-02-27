@@ -44,9 +44,9 @@ export function subscribeToPubSub() {
 
   // Process Events
   events.on("message", async (message) => {
-    console.log("evt msg ", message);
-    const data: IEvent = { transactionId: message.attributes.transactionId }
     try {
+      const data: IEvent = { transactionId: message.attributes.transactionId }
+
       logger.log({
         level: "info",
         message: `Event received ${JSON.stringify(data)}`,
@@ -63,7 +63,7 @@ export function subscribeToPubSub() {
     } catch (error) {
       logger.log({
         level: "error",
-        message: `Error: failed while processing event: ${data}, ${error}`,
+        message: `Error: failed while processing event: ${message}, ${error}`,
       });
     }
   });
