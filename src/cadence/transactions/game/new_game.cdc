@@ -1,14 +1,14 @@
- import NonFungibleToken from "../../contracts/standard/NonFungibleToken.cdc"
+import NonFungibleToken from "../../contracts/standard/NonFungibleToken.cdc"
 import FungibleToken from "../../contracts/standard/FungibleToken.cdc"
 import FlowToken from "../../contracts/standard/FlowToken.cdc"
 import BattleBlocksGame from "../../contracts/game/BattleBlocksGame.cdc"
 
-transaction(wagerAmount: UFix64, merkleRoot: [UInt8]) {
+transaction(wagerAmount: UFix64, merkleRoot: [UInt8], payload: UInt64) {
 
     let gamePlayerRef: &BattleBlocksGame.GamePlayer
     let wagerVault: @FlowToken.Vault
 
-    prepare(acct: AuthAccount, admin: AuthAccount) {
+    prepare(acct: AuthAccount) {
         // Get a reference to the GamePlayer resource in the signing account's storage
         self.gamePlayerRef = acct
             .borrow<&BattleBlocksGame.GamePlayer>(
@@ -24,6 +24,6 @@ transaction(wagerAmount: UFix64, merkleRoot: [UInt8]) {
     }
 
     execute {
-        self.gamePlayerRef.createGame(wager: <-self.wagerVault, merkleRoot: merkleRoot)
+        self.gamePlayerRef.createGame(wager: <-self.wagerVault, merkleRoot: merkleRoot, payload: payload)
     }
 }
