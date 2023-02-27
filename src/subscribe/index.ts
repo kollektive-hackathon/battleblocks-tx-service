@@ -41,10 +41,10 @@ export function subscribeToPubSub() {
   });
 
   const events = pubsub.subscription(eventTopic);
-  
+
   // Process Events
   events.on("message", async (message) => {
-    const data: IEvent = JSON.parse(message.data);
+    const data: IEvent = JSON.parse(message.attributes);
     try {
       logger.log({
         level: "info",
