@@ -44,7 +44,8 @@ export function subscribeToPubSub() {
 
   // Process Events
   events.on("message", async (message) => {
-    const data: IEvent = JSON.parse(message.attributes);
+    console.log("evt msg ", message);
+    const data: IEvent = { transactionId: message.attributes.transactionId }
     try {
       logger.log({
         level: "info",
