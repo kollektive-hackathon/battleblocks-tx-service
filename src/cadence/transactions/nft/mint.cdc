@@ -10,8 +10,6 @@ import MetadataViews from "../../../contracts/standard/MetadataViews.cdc"
 transaction(
     recipient: Address,
     name: String,
-    description: String,
-    thumbnail: String,
     metdata: {String: AnyStruct}
 ) {
 
