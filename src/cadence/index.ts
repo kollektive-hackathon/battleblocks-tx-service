@@ -31,5 +31,6 @@ export const getContractAddresses = () => {
     FlowToken: config().flowTokenAddress,
     FungibleToken: config().fungibleTokenAddress,
     NonFungibleToken: config().nonFungibleTokenAddress,
+    MetadataViews: config().nonFungibleTokenAddress,
   };
 };
