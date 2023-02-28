@@ -10,7 +10,7 @@ import MetadataViews from "../../../contracts/standard/MetadataViews.cdc"
 transaction(
     recipient: Address,
     name: String,
-    metdata: {String: AnyStruct}
+    metdata: {String: String}
 ) {
 
     /// local variable for storing the minter reference
