@@ -60,6 +60,7 @@ const process = async (message: ICommand): Promise<string | null> => {
       await lockKey(freeProposerKeyIndex, result);
     } else if (err) {
       // Unlock the proposer key from redis
+      console.log(err);
       await unlockKey(freeProposerKeyIndex);
       logger.log({
         level: "error",
